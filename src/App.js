@@ -15,12 +15,12 @@ function App() {
       "wonEmmy": false
     },
     {
-      "name": "Johnny Depp",
-      "pictureUrl": "https://image.tmdb.org/t/p/w500/kbWValANhZI8rbWZXximXuMN4UN.jpg",
-      "popularity": 15.656534,
-      "id": "7dad00f7-3949-477d-a7e2-1467fd2cfc06",
-      "wonOscar": false,
-      "wonEmmy": false
+      "name": "Anthony Hopkins",
+      "pictureUrl": "https://image.tmdb.org/t/p/w500/jdoBTIru71FbPuHGEgox5RVmIO0.jpg",
+      "popularity": 10.273801,
+      "id": "f197b07c-c0f6-4837-a4d6-f98f8673b0e6",
+      "wonOscar": true,
+      "wonEmmy": true
     },
     {
       "name": "Monica Bellucci",
@@ -39,11 +39,11 @@ function App() {
       "wonEmmy": false
     },
     {
-      "name": "Ian McKellen",
-      "pictureUrl": "https://image.tmdb.org/t/p/w500/coWjgMEYJjk2OrNddlXCBm8EIr3.jpg",
-      "popularity": 10.070132,
-      "id": "0067ae32-97b6-4431-898e-eb1c10150abb",
-      "wonOscar": false,
+      "name": "Matt Damon",
+      "pictureUrl": "https://image.tmdb.org/t/p/w500/elSlNgV8xVifsbHpFsqrPGxJToZ.jpg",
+      "popularity": 9.500475,
+      "id": "fd998a8f-1c9f-4ad8-8a03-45f93b630aa1",
+      "wonOscar": true,
       "wonEmmy": false
     }
   ]
@@ -56,6 +56,8 @@ function App() {
           <th>Picture</th>
           <th>Name</th>
           <th>Popularity</th>
+          <th>Won an Oscar</th>
+          <th>Won an Emmy</th>
         </tr>
         {contacts.map((val, key) => {
           return (
@@ -63,6 +65,8 @@ function App() {
               <td><img className="contact-image" src={val.pictureUrl} alt="image"/></td>
               <td>{val.name}</td>
               <td>{val.popularity}</td>
+              <td>{val.wonOscar ? "🏆" : ''}</td>
+              <td>{val.wonEmmy ? "🏆" : ''}</td>
             </tr>
           )
         })}
