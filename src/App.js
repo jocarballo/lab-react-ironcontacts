@@ -20,14 +20,25 @@ function App() {
     //return contact1.name - contact2.name
   //};
 
-  
-  let sortByName = contactsList.sort( (a, b) => a.localeCompare(b, 'fr'))
-
-  let sortByPopularity = contactsList.sort( (a, b) => a.localeCompare(b, 'fr'))
+  const sortByName = () => {
+    const sortedContacts = contactsList.slice().sort((a, b) => {
+      return a.name.localeCompare(b.name);
+    });
+    console.log(sortedContacts)
+    setContactsList([...sortedContacts]);
+  };
   
   //let sortByPopularity = () => {
     //return contact2.popularity - contact1.popularity
   //};
+
+  const sortByPopularity = () => {
+    const sortedContacts = contactsList.slice().sort((a, b) => {
+      return b.popularity - a.popularity;
+    });
+    console.log(sortedContacts)
+    setContactsList([...sortedContacts]);
+  };
 
 
   console.log("Contacts",)
@@ -36,8 +47,8 @@ function App() {
   <div className="App">
   <h1>Iron Contacts</h1>
     <button onClick={() => RandomContact(contacts)}>Add Random Contact</button>
-    <button onClick={() => contactsList(sortByName)}>Sort by Name</button>
-    <button onClick={() => contactsList(sortByPopularity)}>Sort by Popularity</button>
+    <button onClick={sortByName}>Sort by Name</button>
+    <button onClick={sortByPopularity}>Sort by Popularity</button>
 
     <div className="contactsTable">
       <table>
